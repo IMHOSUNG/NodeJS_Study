@@ -115,4 +115,4 @@ spider(process.argv[2], 1, (err) => {
 });
 
 // 사용법 명령어
-// node webspider.js http://www.example.com
+// node webspider2.js http://www.example.com

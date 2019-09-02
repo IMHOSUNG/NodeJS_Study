@@ -18,11 +18,11 @@ module.exports  = class TaskQueue {
             //shift 배열의 첫 아이템 제거
             const task = this.queue.shift();
             task( ()=> {
-                console.log("in task")
+                console.log("second task")
                 this.running--;
                 this.next();
             })
-            console.log("out task")
+            console.log("first task")
             this.running++;
         }
     }
