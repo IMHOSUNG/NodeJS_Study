@@ -6,7 +6,7 @@ const utilities = require('./utils');
 const request = utilities.promisify(require('request'));
 const fs = require('fs');
 const mkdirp = utilities.promisify(require('mkdirp'));
-const path = utilities.promisify(require('path'));
+const path = require('path');
 const readFile = utilities.promisify(fs.readFile)
 const writeFile = utilities.promisify(fs.writeFile)
 
@@ -54,7 +54,7 @@ function spider (url , nesting) {
         }
     )
 }
-spider(process.argv[2], 1)
+spider(process.argv[2], 3)
     .then(()=>console.log('Download Complete'))
     .catch( err => console.log(err) )
 

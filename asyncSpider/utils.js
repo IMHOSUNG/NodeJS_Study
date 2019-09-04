@@ -72,11 +72,14 @@ module.exports.promisify = function (callbackBasedApi) {
           return reject(err)
         }
         if(arguments.length <= 2){
+          //console.log(result)
           resolve(result)
         }else{
+          console.log("slice " + [].slice.call(arguments+1))
           resolve([].slice.call(arguments,1))
         }
       });
+      console.log(args);
 
       callbackBasedApi.apply(null,args)
     })
